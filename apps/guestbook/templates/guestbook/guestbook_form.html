@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <div class="card shadow-sm">
+        <div class="card-header text-center">
+            <h4 class="my-0 font-weight-normal">New Entry</h4>
+        </div>
+        <div class="card-body text-left">
+            <form method="post">
+                {% include 'guestbook/snippets/form.html' %}
+
+                <p class="text-center">
+                    <a href="{% url 'guestbook:index' %}" class="btn btn-lg btn-outline-secondary">
+                        Cancel
+                    </a>
+                    <button type="submit" class="btn btn-lg btn-primary">
+                        <i class="fas fa-save"></i> Save
+                    </button>
+                </p>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

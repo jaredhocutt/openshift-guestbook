@@ -1,0 +1,37 @@
+{% load widget_tweaks %}
+
+{% csrf_token %}
+
+{% if form.non_field_errors %}
+    <div class="alert alert-danger" role="alert">
+        <p><strong>The following errors occurred:</strong></p>
+
+        {{ form.non_field_errors }}
+    </div>
+{% endif %}
+
+{% for field in form %}
+    <div class="form-group">
+        <strong>
+            <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+        </strong>
+
+        {{ field | add_class:'form-control' }}
+
+        {% if field.help_text %}
+            <small class="form-text text-muted">
+                {% autoescape off %}
+                    {{ field.help_text }}
+                {% endautoescape %}
+            </small>
+        {% endif %}
+
+        {% if field.errors %}
+            {% for error in field.errors %}
+                <p class="text-danger">{{ error }}</p>
+            {% endfor %}
+        {% endif %}
+    </div>
+{% endfor %}
+
+<hr class="my-4" />

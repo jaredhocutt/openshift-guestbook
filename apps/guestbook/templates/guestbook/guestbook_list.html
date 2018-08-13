@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <div class="card shadow-sm">
+        <div class="card-header text-center">
+            <h4 class="my-0 font-weight-normal">Guestbook Entries</h4>
+        </div>
+        <ul class="list-group list-group-flush">
+            {% for guestbook_entry in guestbook_entries %}
+                <li class="list-group-item">
+                    {{ guestbook_entry.message }}
+
+                    <span class="float-right">
+                        <a href="{% url 'guestbook:delete' guestbook_entry.pk %}" class="mx-2 text-danger">
+                            <i class="fas fa-trash" title="Delete"></i>
+                        </a>
+                    </span>
+                </li>
+            {% empty %}
+                <li class="list-group-item">There are not any guestbook entries.</li>
+            {% endfor %}
+        </ul>
+        <div class="card-body text-center">
+            <a href="{% url 'guestbook:add' %}" class="btn btn-lg btn-outline-primary">
+                <i class="fas fa-plus"></i> New Entry
+            </a>
+        </div>
+    </div>
+</div>
+{% endblock %}
