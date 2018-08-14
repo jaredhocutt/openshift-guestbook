@@ -12,7 +12,7 @@ metadata:
       information about using this template, including OpenShift considerations, see
       https://github.com/jaredhocutt/openshift-guestbook/blob/master/README.md.
     iconClass: icon-openshift
-    openshift.io/display-name: OpenShift Guestbook
+    openshift.io/display-name: OpenShift Guestbook (Ephemeral)
     openshift.io/documentation-url: https://github.com/jaredhocutt/openshift-guestbook
     openshift.io/long-description: This template defines resources needed to develop
       a Django based application, including a build configuration, application deployment
