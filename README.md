@@ -8,6 +8,8 @@ point to develop your own and deploy it on an [OpenShift][openshift] cluster.
 The steps in this document assume that you have access to an OpenShift
 deployment that you can deploy applications on.
 
+![OpenShift Guestbook](img/screenshot.png)
+
 ## Special files in this repository
 
 Apart from the regular files created by Django, this repository contains:
